@@ -39,7 +39,6 @@ import {
 import { useOrder } from '../contexts/OrderContext';
 import { getRandomImage } from '../utils/imageUtils';
 
-// 格式化日期的輔助函數
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('zh-TW', {
@@ -142,7 +141,7 @@ const OrderDetail = () => {
         </Typography>
       </Box>
 
-      {/* 訂單圖片 */}
+      {}
       <Paper sx={{ mb: 3, overflow: 'hidden' }}>
         <img
           src={orderImage}

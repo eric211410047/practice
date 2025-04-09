@@ -38,7 +38,7 @@ const featuredProducts = [
 const Home = () => {
   return (
     <Box>
-      {/* Hero Section */}
+      {}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -72,7 +72,7 @@ const Home = () => {
         </Container>
       </Box>
 
-      {/* Featured Products */}
+      {}
       <Container maxWidth="lg">
         <Typography variant="h4" component="h2" gutterBottom align="center">
           熱門商品

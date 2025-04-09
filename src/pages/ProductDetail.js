@@ -24,7 +24,6 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
-  // 模擬產品數據
   const product = {
     id,
     name: '醫療產品示例',

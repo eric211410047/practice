@@ -20,7 +20,6 @@ import {
 } from '@mui/icons-material';
 import { useOrder } from '../contexts/OrderContext';
 
-// 格式化日期的輔助函數
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('zh-TW', {

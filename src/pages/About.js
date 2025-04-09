@@ -17,7 +17,7 @@ const About = () => {
           關於我們
         </Typography>
 
-        {/* Company Introduction */}
+        { }
         <Box sx={{ mb: 6 }}>
           <Typography variant="h5" gutterBottom>
             公司簡介
@@ -28,7 +28,7 @@ const About = () => {
           </Typography>
         </Box>
 
-        {/* Our Values */}
+        { }
         <Box sx={{ mb: 6 }}>
           <Typography variant="h5" gutterBottom>
             我們的價值觀
@@ -73,7 +73,7 @@ const About = () => {
           </Grid>
         </Box>
 
-        {/* Our Team */}
+        { }
         <Box sx={{ mb: 6 }}>
           <Typography variant="h5" gutterBottom>
             我們的團隊

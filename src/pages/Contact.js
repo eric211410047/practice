@@ -34,7 +34,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 這裡可以添加表單提交邏輯
     setSubmitStatus('success');
     setFormData({
       name: '',
@@ -52,7 +51,7 @@ const Contact = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          {/* Contact Information */}
+          {}
           <Grid item xs={12} md={4}>
             <Card sx={{ mb: 4 }}>
               <CardContent>
@@ -101,7 +100,7 @@ const Contact = () => {
             </Card>
           </Grid>
 
-          {/* Contact Form */}
+          {}
           <Grid item xs={12} md={8}>
             <Card>
               <CardContent>

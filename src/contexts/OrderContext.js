@@ -48,7 +48,6 @@ const orderReducer = (state, action) => {
       return state;
   }
 
-  // 保存到 localStorage
   localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(newState.orders));
   return newState;
 };
@@ -57,7 +56,6 @@ export const OrderProvider = ({ children }) => {
   const [state, dispatch] = useReducer(orderReducer, { orders: [] });
   const { user } = useAuth();
 
-  // 初始化時從 localStorage 加載訂單數據
   useEffect(() => {
     const savedOrders = localStorage.getItem(ORDER_STORAGE_KEY);
     if (savedOrders) {

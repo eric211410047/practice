@@ -62,7 +62,6 @@ const cartReducer = (state, action) => {
       return state;
   }
 
-  // 保存到 localStorage
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(newState.items));
   return newState;
 };
@@ -70,7 +69,6 @@ const cartReducer = (state, action) => {
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, { items: [] });
 
-  // 初始化時從 localStorage 加載購物車數據
   useEffect(() => {
     const savedCart = localStorage.getItem(CART_STORAGE_KEY);
     if (savedCart) {

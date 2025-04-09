@@ -28,7 +28,6 @@ export const AuthProvider = ({ children }) => {
   });
 
   const login = (userData) => {
-    // 這裡可以添加實際的登入邏輯
     dispatch({ type: 'LOGIN', payload: userData });
   };
 

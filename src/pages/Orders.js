@@ -44,7 +44,6 @@ import {
 } from '@mui/icons-material';
 import { useOrder } from '../contexts/OrderContext';
 
-// 格式化日期的輔助函數
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('zh-TW', {
@@ -54,7 +53,6 @@ const formatDate = (dateString) => {
   });
 };
 
-// 計算過去N天的日期
 const getDateNDaysAgo = (n) => {
   const date = new Date();
   date.setDate(date.getDate() - n);
@@ -129,7 +127,6 @@ const Orders = () => {
     page * rowsPerPage + rowsPerPage
   );
 
-  // 計算訂單統計數據
   const orderStats = useMemo(() => {
     const stats = {
       total: orders.length,
@@ -145,15 +142,12 @@ const Orders = () => {
       recentOrders: 0,
     };
 
-    // 計算各狀態訂單數量
     orders.forEach(order => {
       stats.byStatus[order.status] = (stats.byStatus[order.status] || 0) + 1;
     });
 
-    // 計算平均訂單金額
     stats.averageAmount = stats.total > 0 ? stats.totalAmount / stats.total : 0;
 
-    // 計算最近30天的訂單數量
     const thirtyDaysAgo = getDateNDaysAgo(30);
     stats.recentOrders = orders.filter(order => new Date(order.date) >= thirtyDaysAgo).length;
 
@@ -239,7 +233,7 @@ const Orders = () => {
   };
 
   const handleExportOrders = () => {
-    // 準備 CSV 數據
+
     const headers = ['訂單編號', '訂單日期', '收件人', '電話', '電子郵件', '地址', '總金額', '狀態'];
     const csvData = sortedOrders.map(order => [
       order.id,
@@ -252,26 +246,21 @@ const Orders = () => {
       order.status
     ]);
 
-    // 將數據轉換為 CSV 格式
     const csvContent = [
       headers.join(','),
       ...csvData.map(row => row.join(','))
     ].join('\n');
 
-    // 創建 Blob 對象
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
 
-    // 創建下載鏈接
     const link = document.createElement('a');
     link.setAttribute('href', url);
     link.setAttribute('download', `orders_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
 
-    // 觸發下載
     link.click();
 
-    // 清理
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
@@ -318,7 +307,7 @@ const Orders = () => {
         </Box>
       </Box>
 
-      {/* 訂單統計卡片 */}
+      {}
       <Grid container spacing={3} sx={{ mb: 3 }}>
         <Grid item xs={12} sm={6} md={3}>
           <Card>

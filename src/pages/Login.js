@@ -35,15 +35,12 @@ const Login = () => {
     e.preventDefault();
     setError('');
 
-    // 驗證表單
     if (!formData.email || !formData.password) {
       setError('請填寫所有必填欄位');
       return;
     }
 
-    // 模擬登入
     try {
-      // 這裡可以添加實際的登入邏輯
       login({
         id: 1,
         name: '測試用戶',

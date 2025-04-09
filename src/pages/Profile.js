@@ -32,7 +32,6 @@ const Profile = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: 實現更新用戶資料的邏輯
     setIsEditing(false);
   };
 
